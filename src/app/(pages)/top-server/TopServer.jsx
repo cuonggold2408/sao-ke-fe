@@ -16,7 +16,7 @@ const TopServer = () => {
           setTopDonations(response.message);
         }
       } catch (error) {
-        console.error("Lỗi khi tải dữ liệu:", error);
+        // console.error("Lỗi khi tải dữ liệu:", error);
       } finally {
         setIsLoading(false);
       }

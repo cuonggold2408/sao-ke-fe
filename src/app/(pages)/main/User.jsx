@@ -20,16 +20,11 @@ export default function User({ filterParams }) {
   const [noTransactions, setNoTransactions] = useState(false);
   const prevFilterParams = useRef(filterParams);
 
-  console.log("user filterParams: ", filterParams);
-
   // Hàm xây dựng query URL với filterParams
   const buildQueryURL = (page) => {
     let url = `${API_ROOT}/search?page=${page}`;
-    console.log("url: ", url);
 
     if (filterParams.amount) {
-      console.log("filterParams.amount: ", filterParams.amount);
-
       url += `&money=${filterParams.amount}`;
     }
     if (filterParams.date) {
@@ -48,7 +43,6 @@ export default function User({ filterParams }) {
     if (filterParams.search) {
       url += `&description=${filterParams.search}`;
     }
-    console.log("url: ", url);
 
     return url;
   };
@@ -75,8 +69,6 @@ export default function User({ filterParams }) {
 
         // const json = await res.json();
 
-        // console.log("json: ", json);
-
         const transactions = res.message.transactions;
 
         // Cập nhật `hasMore` thành `false` nếu không còn dữ liệu
@@ -94,9 +86,9 @@ export default function User({ filterParams }) {
       } catch (error) {
         if (error.name === "AbortError") {
           // Nếu là lỗi do abort (request bị huỷ), không cần xử lý thêm
-          console.warn("Request bị huỷ:", error.message);
+          // console.warn("Request bị huỷ:", error.message);
         } else {
-          console.error("Lỗi khi tải dữ liệu:", error);
+          // console.error("Lỗi khi tải dữ liệu:", error);
         }
         setIsLoading(false);
         setIsLoading(false);
