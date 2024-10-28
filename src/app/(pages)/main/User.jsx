@@ -20,6 +20,8 @@ export default function User({ filterParams }) {
   const [noTransactions, setNoTransactions] = useState(false);
   const prevFilterParams = useRef(filterParams);
 
+  console.log("filterParams: ", filterParams);
+
   // Hàm xây dựng query URL với filterParams
   const buildQueryURL = (page) => {
     let url = `${API_ROOT}/search?page=${page}`;
@@ -141,7 +143,7 @@ export default function User({ filterParams }) {
 
   return (
     <>
-      {noTransactions ? (
+      {noTransactions || filterParams === "not ok" ? (
         <div className="flex justify-center items-center h-[520px]">
           <p>Không có giao dịch hợp lệ.</p>
         </div>
