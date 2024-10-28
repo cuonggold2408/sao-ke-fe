@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useState } from "react";
 import axios from "axios";
 import { API_ROOT } from "@/app/constants/api";
