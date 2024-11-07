@@ -23,7 +23,7 @@ const Header = ({ onDataFilterChange }) => {
             Top Server
           </Link>
           {/* <Link href="/top-intercept">Top ăn chặn</Link> */}
-          {/* <ButtonUpload onDataFilterChange={onDataFilterChange} /> */}
+          <ButtonUpload onDataFilterChange={onDataFilterChange} />
         </div>
       </div>
     </div>
